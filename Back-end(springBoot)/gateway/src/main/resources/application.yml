@@ -1,0 +1,46 @@
+server:
+  port: 9019
+
+spring:
+  application:
+    name: API-GATEWAY
+#  Gateway Routes registration
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+      routes:
+        - id: AUTHORIZATION-SERVER
+          uri: lb://AUTHORIZATION-SERVER
+          predicates:
+            - Path=/oauth/**
+        - id: RESOURCES-SERVER
+          uri: lb://RESOURCES-SERVER
+          predicates:
+            - Path=/api/**
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

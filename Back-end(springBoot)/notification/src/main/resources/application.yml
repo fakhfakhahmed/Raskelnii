@@ -1,0 +1,35 @@
+server:
+  port: 1899
+
+
+spring:
+  application:
+    name: NOTIFICATION-SERVER
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  main:
+    allow-circular-references: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:
+        http://localhost:8761/eureka
+    registerWithEureka:
+      true
+    fetchRegistry:
+      true
+
+queue:
+  notification-queue: NotificationQueue
+  email-queue: EmailQueue
+  emailcode-queue: EmailCodeQueue
+
+twilio:
+  accountSid: YOUR_TWILIO_ACCOUNT_SID
+  authToken: YOUR_TWILIO_AUTH_TOKEN
+  phoneNumber: YOUR_TWILIO_PHONE_NUMBER

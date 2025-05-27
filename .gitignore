@@ -1,0 +1,166 @@
+# Root .gitignore file for Raskelni project
+
+### General ###
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.bak
+*.lock
+*.gz
+*.zip
+*.tar
+*.rar
+
+### Environment Files ###
+.env
+.env.*
+!.env.example
+
+### IDE and Editor Files ###
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.iml
+*.ipr
+*.iws
+
+### Large Files ###
+# Files larger than 100MB
+*.jar
+*.war
+*.nar
+*.ear
+
+# Exclude large binary files
+*.mp4
+*.mp3
+*.avi
+*.mov
+*.wmv
+*.flv
+*.iso
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+*.obj
+*.o
+
+### Backend (Spring Boot) ###
+# Compilation output
+**/target/
+**/bin/
+**/build/
+
+# Maven specific
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.versionsBackup
+**/pom.xml.next
+**/release.properties
+**/dependency-reduced-pom.xml
+**/buildNumber.properties
+**/.mvn/timing.properties
+**/.mvn/wrapper/maven-wrapper.jar
+**/.mvn/wrapper/maven-wrapper.properties
+
+# Spring Boot specific
+**/spring-boot-devtools.properties
+**/.spring-boot-devtools
+
+### Frontend (React.js) ###
+# Dependencies
+**/node_modules/
+**/.pnp
+**/.pnp.js
+
+# Testing
+**/coverage/
+
+# Production build
+**/build/
+**/dist/
+**/.cache/
+**/.next/
+**/out/
+
+# Debug logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Local env files
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Package managers
+**/yarn.lock
+**/package-lock.json
+
+### Mobile (Flutter) ###
+# Dart/Flutter specific
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+**/flutter_*.png
+**/.last_build_id
+
+# Android related
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/gradle/wrapper/gradle-wrapper.jar
+**/android/.gradle/
+**/android/captures/
+**/android/local.properties
+
+# iOS related
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/.last_build_id
+**/ios/ServiceDefinitions.json
+**/ios/.vagrant/
+**/ios/DerivedData/
+**/ios/build/
+
+# Web related
+**/lib/generated_plugin_registrant.dart
+
+# Symbolication related
+**/app.*.symbols
+
+# Obfuscation related
+**/app.*.map.json
+
+### Compiled code ###
+**/*.class
+
+### Logs and databases ###
+**/*.log
+**/*.sqlite
+**/*.db
+
+### OS specific files ###
+**/.DS_Store
+**/Thumbs.db
+
+### Generated content ###
+**/.generated/
